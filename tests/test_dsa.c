@@ -15,12 +15,10 @@ void tearDown() {
 void test_insertion_sort() {
         int input[SIZE] = {0, 1, 5, 2, 1};
         int expected[SIZE] = {0, 1, 1, 2, 5};
-        int result[SIZE];
+        
+        insertion_sort(input, SIZE);
 
-        memcpy(result, input, SIZE*4);
-        insertion_sort(result, SIZE);
-
-        TEST_ASSERT_EQUAL_INT_ARRAY(expected, result, SIZE);
+        TEST_ASSERT_EQUAL_INT_ARRAY(expected, input, SIZE);
 }
 
 int main() {
