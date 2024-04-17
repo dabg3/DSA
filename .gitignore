@@ -1,3 +1,4 @@
+# cmake
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -9,5 +10,9 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
-# exclude binary directory
+# target dir
 build
+# editor configs
+*.vim
+# clangd cache
+.cache
