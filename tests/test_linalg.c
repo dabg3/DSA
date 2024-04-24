@@ -28,8 +28,21 @@ void test_matmul() {
         TEST_ASSERT_EQUAL_INT_ARRAY(expected, out, m*p);
 }
 
+void test_matmul_vectors() {
+        // matmul on vectors == dot product
+        int a[3] = {0, 1, 1};
+        int b[3] = {1, 2, 3};
+        int expected = 5;
+
+        int out = 0;
+        matmul(a, b, 1, 3, 1, &out);
+
+        TEST_ASSERT_EQUAL_INT(expected, out);
+}
+
 int main() {
         UNITY_BEGIN();
         RUN_TEST(test_matmul);
+        RUN_TEST(test_matmul_vectors);
         return UNITY_END();
 }
