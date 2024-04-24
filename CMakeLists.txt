@@ -8,7 +8,10 @@ target_sources(dsa PRIVATE
 )
 
 add_subdirectory(unity)
-add_executable(test_runner tests/test_dsa.c)
-target_link_libraries(test_runner PRIVATE dsa unity)
+add_executable(sorting_suite tests/test_sorting.c)
+target_link_libraries(sorting_suite PRIVATE dsa unity)
+add_executable(linalg_suite tests/test_linalg.c)
+target_link_libraries(linalg_suite PRIVATE dsa unity)
 include(CTest)
-add_test(NAME example COMMAND test_runner)
+add_test(NAME sorting COMMAND sorting_suite)
+add_test(NAME linalg COMMAND linalg_suite)
