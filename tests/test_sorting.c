@@ -47,8 +47,31 @@ void test_insertion_sort() {
         TEST_ASSERT_EQUAL_INT_ARRAY(expected, input, SIZE);
 }
 
+void test_linear_search_success() {
+        int input[SIZE] = {0, 1, 5, 2, 1};
+        int n = 5;
+        int expected = 2;
+
+        int res = linear_search(n, input, SIZE);
+
+        TEST_ASSERT_EQUAL_INT(expected, res);
+}
+
+void test_linear_search_fail() {
+        int input[SIZE] = {0, 1, 5, 2, 1};
+        int n = 3;
+        int expected = -1;
+
+        int res = linear_search(n, input, SIZE);
+
+        TEST_ASSERT_EQUAL_INT(expected, res);
+}
+
+
 int main() {
         UNITY_BEGIN();
         RUN_TEST(test_insertion_sort);
+        RUN_TEST(test_linear_search_success);
+        RUN_TEST(test_linear_search_fail);
         return UNITY_END();
 }

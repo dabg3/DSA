@@ -13,6 +13,15 @@ int* insertion_sort(int* arr, int size) {
 	return arr;
 }
 
+int linear_search(int n, int* arr, int size) {
+	for(int i = 0; i < size; i++) {
+		if (arr[i] == n) {
+			return i;
+		}
+	}
+	return -1;
+}
+
 int dot_product(int* a, int* b, int size, int stride_a, int stride_b) {
 	int sum = 0;
 	for (int i = 0; i < size; i++) {
